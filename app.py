@@ -35,7 +35,7 @@ st.markdown(
 
 # loading
 
-with open("model.pkl", 'rb') as file:
+with open("xgboost_model.pkl", 'rb') as file:
     clf = pickle.load(file)
 
 
