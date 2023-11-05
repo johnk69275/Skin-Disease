@@ -34,9 +34,8 @@ st.markdown(
  )
 
 # loading
-
-with open("xgboost_model.pkl", 'rb') as file:
-    clf = pickle.load(file)
+clf = xgb.Booster()
+clf.load_model('xgboost_model.pkl')
 
 
 #model = tf.keras.models.load_model('model.h5')
