@@ -2,7 +2,7 @@ import pickle
 import PIL
 import streamlit as st
 import numpy as np
-import cv2
+
 from PIL import Image
 Str_to_Int = {
     'Actinic keratosis': 0,
