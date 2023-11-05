@@ -35,8 +35,7 @@ st.markdown(
 
 # loading
 clf = xgb.Booster()
-clf.load_model('xgboost_model.pkl')
-
+clf.load_model("xgboost_model.json")
 
 #model = tf.keras.models.load_model('model.h5')
 
