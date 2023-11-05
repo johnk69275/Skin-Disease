@@ -34,7 +34,7 @@ st.markdown(
 
 # loading
 
-with open("best_model.pkl", 'rb') as file:
+with open("model.pkl", 'rb') as file:
     clf = pickle.load(file)
 
 
