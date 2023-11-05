@@ -3,6 +3,7 @@ import PIL
 import streamlit as st
 import numpy as np
 import cv2 
+import xgboost as xgb
 from PIL import Image
 Str_to_Int = {
     'Actinic keratosis': 0,
