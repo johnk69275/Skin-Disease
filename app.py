@@ -35,7 +35,7 @@ st.markdown(
 
 # loading
 clf = xgb.Booster()
-clf.load_model("xgboost_model.json")
+clf.load_model('xgboost_model.model')
 
 #model = tf.keras.models.load_model('model.h5')
 
@@ -52,9 +52,13 @@ if uploaded_file:
     img = np.asarray(imgpath)
     img = cv2.resize(img, (240,240))
     img=img/255.
-    img=img[np.newaxis]
-    #print(img)
-    pred = clf(img)
+    img=img[np.newaxis]   
+    instance_features = np.array([img])
+    instance_features = instance_features.reshape(1, -1)
+
+    dtest = xgb.DMatrix(data=instance_features)
+    pred = clf.predict(dtest)
+    
     st.write(pred)
     maxIndex = np.argmax(pred) 
     x = Int_to_Str[maxIndex]
